@@ -8,7 +8,7 @@ spec:
   capacity:
     storage: 1000Mi
   hostPath:
-    path: /data/standard/default/mo-data-pv
+    path: /development/pv/mo-data-pv
     type: ""
   persistentVolumeReclaimPolicy: Retain
   storageClassName: standard
