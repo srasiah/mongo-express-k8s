@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: mongodb-deployment
   namespace: mongodb-namespace
@@ -9,13 +9,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mongodb
-  strategy: 
-      type: "RollingUpdate"
-      rollingUpdate: 
-        maxSurge: 1
-        maxUnavailable: 1
-    minReadySeconds: 5      
+      app: mongodb   
   template:
     metadata:
       labels:

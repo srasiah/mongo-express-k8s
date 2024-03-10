@@ -1,6 +1,7 @@
 resources:
   - ./mongo-namespace.yml
   - ./mongo-secret.yml
+  - ./mongo-pvc.yml
   - ./mongo.yml
   - ./mongo-configmap.yml
   - ./mongo-express.yml
