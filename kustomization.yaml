@@ -1,0 +1,9 @@
+resources:
+  - ./resources/mongo-namespace.yml
+  - ./resources/mongo-secret.yml
+  - ./resources/mongo-deployment.yml
+  - ./resources/mongo-service.yml
+  - ./resources/mongo-configmap.yml
+  - ./resources/mongo-express.yml
+  - ./resources/mongo-ingress.yml
+  #- ./resources/mongo-express-ingress.yml

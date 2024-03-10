@@ -9,7 +9,7 @@ spec:
   #   - myapp.com
   #     secretName: myapp-secret-tls
   rules:
-    - host: myapp.com
+    - host: mongo-express.rasiahs.com
       http:
         paths:
           - path: /
