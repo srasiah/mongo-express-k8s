@@ -25,27 +25,22 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: mongodb-secret
-                  key: mongo-admin-username
+                  key: mongo-root-username
             - name: ME_CONFIG_MONGODB_ADMINPASSWORD
               valueFrom:
                 secretKeyRef:
                   name: mongodb-secret
-                  key: mongo-admin-password
-            - name: MONGO_INITDB_ROOT_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: mongodb-secret
-                  key: mongo-root-username
-            - name: MONGO_INITDB_ROOT_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: mongodb-secret
-                  key: mongo-root-password                  
+                  key: mongo-root-password                
             - name: ME_CONFIG_MONGODB_SERVER
               valueFrom:
                 configMapKeyRef:
                   name: mongodb-configmap
                   key: database_url
+            - name: ME_CONFIG_MONGODB_ENABLE_ADMIN
+              valueFrom:
+                configMapKeyRef:
+                  name: mongodb-configmap
+                  key: enable_admin   
 ---
 apiVersion: v1
 kind: Service
