@@ -1,11 +1,12 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: mongodb
+  name:  mongodb-stateful
   namespace: mongodb-namespace
   labels:
     app: mongodb
 spec:
+  serviceName: "mongo-db" 
   replicas: 1
   selector:
     matchLabels:
