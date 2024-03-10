@@ -6,9 +6,9 @@
     labels: 
       app: "mongodb"
   spec: 
+    storageClassName: standard
     accessModes: 
       - ReadWriteOnce
     resources: 
       requests: 
-        storage: 5Gi
-    storageClassName: gp2
+        storage: 1000Mi
