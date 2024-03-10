@@ -2,7 +2,6 @@ resources:
   - ./mongo-namespace.yml
   - ./mongo-secret.yml
   - ./mongo.yml
-  - ./mongo-service.yml
   - ./mongo-configmap.yml
   - ./mongo-express.yml
   - ./mongo-ingress.yml
