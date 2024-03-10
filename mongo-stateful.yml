@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: StatefulSet
+kind: Deployment
 metadata:
   name: mongodb-deployment
   namespace: mongodb-namespace
@@ -9,37 +9,43 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mongodb   
+      app: mongodb    
   template:
     metadata:
       labels:
         app: mongodb
     spec:
       containers:
-        - name: mongodb
+        - 
+          name: mongodb
           image: mongo
           imagePullPolicy: "Always"
           ports:
-            - containerPort: 27017
-            - name: "mongodb"
+            - 
+              containerPort: 27017
+              name: "mongodb"
           env:
-            - name: MONGO_INITDB_ROOT_USERNAME
+            - 
+              name: MONGO_INITDB_ROOT_USERNAME
               valueFrom:
                 secretKeyRef:
                   name: mongodb-secret
                   key: mongo-root-username
-            - name: MONGO_INITDB_ROOT_PASSWORD
+            - 
+              name: MONGO_INITDB_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: mongodb-secret
                   key: mongo-root-password  
-          volumeMounts: 
-            - name: "mongodb-persistent-storage"
-            - mountPath: "/data/db"   
-    volumes: 
-      - name: "mongodb-persistent-storage"
-      - persistentVolumeClaim: 
-          claimName: "mongodb-pvc"              
+          volumeMounts:
+            - 
+              name: "mongodb-persistent-storage"
+              mountPath: "/data/db"   
+      volumes: 
+        - 
+          name: "mongodb-persistent-storage"
+          persistentVolumeClaim: 
+            claimName: "mongodb-pvc"              
 ---
 apiVersion: v1
 kind: Service
