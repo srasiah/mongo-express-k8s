@@ -6,7 +6,7 @@ metadata:
   labels:
     app: mongodb
 spec:
-  serviceName: "mongo-db" 
+  serviceName: "mongodb-service" 
   replicas: 1
   selector:
     matchLabels:
@@ -21,10 +21,6 @@ spec:
           name: mongodb
           image: mongo
           imagePullPolicy: "Always"
-          ports:
-            - 
-              containerPort: 27017
-              name: "mongodb"
           env:
             - 
               name: MONGO_INITDB_ROOT_USERNAME
@@ -38,6 +34,10 @@ spec:
                 secretKeyRef:
                   name: mongodb-secret
                   key: mongo-root-password  
+          ports:
+            - 
+              containerPort: 27017
+              name: "mongodb"
           volumeMounts:
             - 
               name: "mongodb-persistent-storage"
