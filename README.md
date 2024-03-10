@@ -83,7 +83,7 @@ Make sure Minikube and kubectl are installed.
 7 - Create an Ingress resource, which defines rules on traffic routing, and an Ingress Controller (K8 Nginx), which manages external access to Services in a cluster. An external proxy server could be used to manage access to various clusters. Change the /etc/hosts file to map the host url stated in mongo-ingress.yml to the IP address of the Ingress Controller. Commented TLS key is used to enable HTTPS.
 
 - `minikube addons enable ingress` to automatically start the K8s Nginx implementation of Ingress Controller.
-- `kubectl get po -n kube-system` to verify the creation of the pod _ingress-nginx-controller._
+- `kubectl get po -n ingress` to verify the creation of the pod _ingress-nginx-controller._
 - `kubectl apply -f mongo-ingress.yml` to create the Ingress called mongodb-ingress.
 - `kubectl delete -f mongo-ingress.yml` to delete the Ingress.
 - `kubectl get ing -n mongodb-namespace` to list all Ingresses.
