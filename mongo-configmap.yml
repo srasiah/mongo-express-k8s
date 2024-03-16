@@ -6,3 +6,4 @@ metadata:
 data:
   database_url: mongodb-service
   enable_admin: 'true'
+  init_db: nuxeo-csv
