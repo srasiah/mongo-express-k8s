@@ -40,11 +40,16 @@ spec:
                 secretKeyRef:
                   name: mongodb-secret
                   key: mongo-root-password                               
+            - name: ME_CONFIG_MONGODB_ENABLE_ADMIN
+              valueFrom:
+                configMapKeyRef:
+                  name: mongodb-configmap
+                  key: enable_admin 
             - name: ME_CONFIG_MONGODB_SERVER
               valueFrom:
                 configMapKeyRef:
                   name: mongodb-configmap
-                  key: database_url 
+                  key: database_url                   
 ---
 apiVersion: v1
 kind: Service
