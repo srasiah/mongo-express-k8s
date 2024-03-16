@@ -33,6 +33,9 @@ spec:
                 secretKeyRef:
                   name: mongodb-secret
                   key: mongo-root-password  
+            - 
+              name: MONGODB_DATABASE
+              value: admin
           ports:
             - 
               containerPort: 27017
