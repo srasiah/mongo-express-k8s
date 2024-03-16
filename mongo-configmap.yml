@@ -4,6 +4,6 @@ metadata:
   name: mongodb-configmap
   namespace: mongodb-namespace
 data:
-  database_url: mongodb-service
+  database_url: mongodb-stateful-0
   enable_admin: 'true'
   init_db: nuxeo-csv
