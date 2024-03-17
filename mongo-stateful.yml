@@ -35,7 +35,7 @@ spec:
                   key: mongo-root-password  
             - name: MONGO_INITDB_DATABASE
               valueFrom:
-                secretKeyRef:
+                configMapKeyRef:
                   name: mongodb-configmap
                   key: init_db 
           volumeMounts:
