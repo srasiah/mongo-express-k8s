@@ -5,5 +5,5 @@ metadata:
   namespace: mongodb-namespace
 data:
   database_url: mongodb-service
-  enable_admin: true
+  enable_admin: 'true'
   init_db: admin
