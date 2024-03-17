@@ -21,7 +21,7 @@ spec:
           imagePullPolicy: "Always"
           ports:
             - containerPort: 27017
-              name: "mongodb"
+              name: mongodb
           env:
             - name: MONGO_INITDB_ROOT_USERNAME
               valueFrom:
@@ -49,6 +49,7 @@ spec:
   selector:
     app: mongodb
   ports:
-    - protocol: TCP
+    - name: mongodb
+      protocol: TCP
       port: 27017
       targetPort: 27017
